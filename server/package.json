@@ -1,0 +1,41 @@
+{
+  "name": "bluebrick-shelf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch --runInBand",
+    "dev": "env-cmd -f ./.env npm run start",
+    "start": "nodemon --exec babel-node src/index.js"
+  },
+  "keywords": [],
+  "author": "Krzysztof Łoś",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.4.2",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "jest": "^26.2.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.27"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.9.6",
+    "concurrently": "^4.1.2",
+    "env-cmd": "^9.0.3",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

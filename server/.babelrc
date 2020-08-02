@@ -1,0 +1,34 @@
+{
+	"presets": [
+		[
+			"@babel/preset-env",
+			{
+				"targets": {
+					"node": "current"
+				}
+			}
+		]
+	],
+	"plugins": [
+		[
+			"module-resolver",
+			{
+				"root": ["./"],
+				"alias": {
+					"@errors": "./src/errors",
+					"@models": "./src/models",
+					"@schemas": "./src/schemas",
+					"@routes": "./src/routes",
+					"@middleware": "./src/middleware",
+					"@config": "./config",
+					"@loaders": "./src/loaders",
+					"@services": "./src/services",
+          "@tests": "./__tests__/",
+          "@testUtils": "./__tests__/utils"
+				}
+			}
+    ],
+    ["@babel/plugin-proposal-class-properties"]
+	],
+	"ignore": []
+}
