@@ -16,11 +16,11 @@ router.post(
         .send({
             data: {
                 user
-            }, 
-            message: 'You are signed out'   
+            },
+            message: 'You are signed out'
         })
     }
 )
-    
+
 
 export default router

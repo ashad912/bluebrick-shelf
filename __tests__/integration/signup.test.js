@@ -1,7 +1,7 @@
 
 import supertest from 'supertest'
 import User from '@models/user.model'
-import { connect, disconnect, objectId } from '@testUtils/mongoose'
+import { connect, disconnect } from '@testUtils/mongoose'
 
 const SIGNUP_ENDPOINT = '/api/signup'
 
@@ -15,11 +15,7 @@ beforeAll(async () => {
     await connect()
 
     await User.deleteMany({})
-
 })
-
-
-
 
 describe('Signup route', () => {
     it('should return 201 status', async () => {
@@ -35,13 +31,10 @@ describe('Signup route', () => {
     })
 
     it('should return 400 status - email in use', async () => {
-
-        
         const body = {
             email: 'integration@test.com',
             password: 'integration',
         }
-
 
         await app()
             .post(SIGNUP_ENDPOINT)
@@ -76,7 +69,6 @@ describe('Signup route', () => {
             .expect(422)
 
         expect(res.body.errors[0].field).toBe('password')
-
 
     })
 })

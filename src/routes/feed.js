@@ -11,7 +11,7 @@ router.get(
     async (req, res) => {
 
         const activities = await activityService.getFeed(req.user)
-        
+
         await userService.addToSeen(req.user, activities)
 
         // Here, if server crashes or client closes the browser this feed will never can be seen...

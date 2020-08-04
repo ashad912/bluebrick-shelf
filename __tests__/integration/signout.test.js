@@ -4,8 +4,6 @@ import config from '@config'
 import User from '@models/user.model'
 import { connect, disconnect, objectId } from '@testUtils/mongoose'
 
-
-
 const SIGNOUT_ENDPOINT = '/api/signout'
 
 let app, createdUser, cookieToken
@@ -52,7 +50,7 @@ describe('Signout route', () => {
             .send()
             .expect(401)
     })
-    
+
 })
 
 afterAll(async () => {

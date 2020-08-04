@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { body, matchedData } from 'express-validator';
+import { body } from 'express-validator';
 import auth from '@middleware/auth'
 import validateRequest from '@middleware/validate-request'
 import bookService from '@services/book.service';
@@ -14,7 +14,7 @@ router.post(
         body('bookNo')
             .isInt({ min: 1, max: 5 })
             .custom(value => {
-                if(typeof value != 'number'){
+                if (typeof value != 'number') {
                     return false
                 }
                 return true
@@ -23,7 +23,7 @@ router.post(
         body('rate')
             .isInt({ min: 1, max: 10 })
             .custom(value => {
-                if(typeof value != 'number'){
+                if (typeof value != 'number') {
                     return false
                 }
                 return true
@@ -32,7 +32,7 @@ router.post(
         body('review')
             .isLength({ max: 200 })
             .custom(value => {
-                if(value && typeof value != 'string'){
+                if (value && typeof value != 'string') {
                     return false
                 }
                 return true
@@ -49,8 +49,8 @@ router.post(
 
         // express-validator does not provide this functionality conveniently
         // Clear additional keys
-        for(const field in body){
-            if(!['rate', 'review'].includes(field)){
+        for (const field in body) {
+            if (!['rate', 'review'].includes(field)) {
                 delete body[field]
             }
         }
@@ -69,10 +69,10 @@ router.post(
             ...body
         }
 
-        // Rates are pernamently saved in db. It is not neccessary for activities system.
+        // Rates are pernamently saved in db. It is not neccessary to activities system.
         const book = await bookService.addRate(bookNo, rateObject)
 
-        await activityService.createActivity(book._id, rateObject) 
+        await activityService.createActivity(book._id, rateObject)
 
         res
         .status(200)

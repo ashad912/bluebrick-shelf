@@ -3,7 +3,7 @@ import config from '@config'
 
 export default (err, req, res, next) => {
 
-  if(config.nodeEnv === 'dev'){
+  if (config.nodeEnv === 'dev') {
     console.log(err)
   }
 
@@ -12,7 +12,7 @@ export default (err, req, res, next) => {
   }
 
   if (err.name === 'MongooseServerSelectionError' || err.name === 'MongoError') {
-    return res.status(500).send({ errors: [{ message: 'Internal server error' }]})
+    return res.status(500).send({ errors: [{ message: 'Internal server error' }] })
   }
 
   res.status(400).send({

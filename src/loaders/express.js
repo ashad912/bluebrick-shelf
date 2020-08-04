@@ -2,7 +2,6 @@ import express from 'express'
 import 'express-async-errors'
 import { json } from 'body-parser'
 import cookieParser from 'cookie-parser'
-import config from '@config'
 
 import feedRouter from '@routes/feed'
 import rateRouter from '@routes/rate'

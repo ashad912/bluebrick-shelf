@@ -75,12 +75,12 @@ UserSchema.statics.findByCredentials = async (email, password) => {
     return user
 }
 
-
-UserSchema.pre('save', async function (next) {//middleware, working with static User.create!!
+// Hash password before save
+UserSchema.pre('save', async function (next) {
 
     const user = this
 
-    if (user.isModified('password')) { //mongoose method
+    if (user.isModified('password')) { // Mongoose method
         user.password = await bcrypt.hash(user.password, 8)
     }
 

@@ -4,11 +4,10 @@ import User from '@models/user.model'
 import NotAuthorizedError from '@errors/not-authorized'
 import BadRequestError from '@errors/bad-request'
 
-
 const signUp = async (email, password) => {
 
     const existingUser = await User.findOne({ email })
-    
+
     if (existingUser) {
         throw new BadRequestError('Email is in use')
     }
@@ -38,7 +37,6 @@ const getUserFromToken = async (token) => {
 
     return user
 }
-
 
 const addToSeen = async (user, activities) => {
     // $addToSet ensures that there are no duplicate items added

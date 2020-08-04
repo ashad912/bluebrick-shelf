@@ -22,8 +22,6 @@ beforeAll(async () => {
         password: 'integration',
     }).save()
 
-
-
 })
 
 describe('Signin route', () => {

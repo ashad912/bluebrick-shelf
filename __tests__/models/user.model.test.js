@@ -26,8 +26,6 @@ describe('The User model', () => {
         createdUser = await User.create(user)
     })
 
-
-
     describe('toJSON method', () => {
         it('should return user without email, password, tokens, seen and __v fields', async () => {
             const user = (await User.findById(createdUser._id)).toJSON()
@@ -39,8 +37,6 @@ describe('The User model', () => {
             expect(user.__v).not.toBeDefined()
         })
     })
-
-
 
     describe('generateAuthToken method', () => {
 

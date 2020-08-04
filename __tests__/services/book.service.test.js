@@ -2,7 +2,6 @@
  * @jest-environment node
  */
 
-import mongoose from 'mongoose'
 import Book from '@models/book.model'
 import BadRequestError from '@errors/bad-request'
 import bookService from '@services/book.service'

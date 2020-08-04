@@ -36,7 +36,7 @@ router.post(
                 token
             },
             message: 'You are signed in'
-        })
+            })
     }
 )
 

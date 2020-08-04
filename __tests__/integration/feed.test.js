@@ -5,7 +5,6 @@ import User from '@models/user.model'
 import Activity from '@models/activity.model'
 import Book from '@models/book.model'
 import { connect, disconnect, objectId } from '@testUtils/mongoose'
-import NotAuthorizedError from '@errors/not-authorized'
 
 const FEED_ENDPOINT = '/api/feed'
 

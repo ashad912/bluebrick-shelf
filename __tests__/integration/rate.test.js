@@ -45,8 +45,6 @@ beforeAll(async () => {
 
 })
 
-
-
 describe('Rate route', () => {
 
     const createdUserReview = 'Amazing position'

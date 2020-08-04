@@ -19,7 +19,7 @@ describe('The Activity service', () => {
 
         it('should create new Activity with review', async () => {
             const bookId = objectId()
-            const {_id} = await activityService.createActivity(bookId, rateObject)
+            const { _id } = await activityService.createActivity(bookId, rateObject)
 
             const activity = await Activity.findOne({ _id })
 
@@ -31,11 +31,11 @@ describe('The Activity service', () => {
 
         it('should create new Activity without review', async () => {
 
-            const newRateObject = {...rateObject}
+            const newRateObject = { ...rateObject }
             delete newRateObject.review
-            
+
             const bookId = objectId()
-            const {_id} = await activityService.createActivity(bookId, newRateObject)
+            const { _id } = await activityService.createActivity(bookId, newRateObject)
 
             const activity = await Activity.findOne({ _id })
 
@@ -47,7 +47,7 @@ describe('The Activity service', () => {
     })
 
     describe('getFeed method', () => {
-        let createdUserOne, createdUserTwo, createdActivityOne 
+        let createdUserOne, createdUserTwo, createdActivityOne
         let createdActivityTwo, createdActivityThree, createdBook
         let createdActivityFourId, createdActivityFour
 
@@ -55,7 +55,7 @@ describe('The Activity service', () => {
 
             await Activity.deleteMany({})
             await User.deleteMany({})
-            
+
             createdBook = await Book.create({
                 bookNo: 8,
                 name: 'JavaScript Handbook',
@@ -67,7 +67,7 @@ describe('The Activity service', () => {
                 password: 'testtest'
             })
 
-        
+
             createdActivityOne = await Activity.create({
                 book: createdBook._id,
                 user: createdUserOne._id,
@@ -75,7 +75,7 @@ describe('The Activity service', () => {
                 review: 'Good from userOne'
             })
 
-            
+
             createdActivityFourId = objectId()
 
             createdUserTwo = await User.create({
@@ -106,7 +106,7 @@ describe('The Activity service', () => {
                 review: 'Very good from userTwo'
             })
 
-            
+
         })
 
         it('should return two populated and sorted activities (performed by another after user)', async () => {

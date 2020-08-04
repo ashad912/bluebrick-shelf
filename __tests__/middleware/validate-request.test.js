@@ -11,40 +11,40 @@ import RequestValidationError from '@errors/request-validation'
 describe('Validate request middleware', () => {
 
     describe('when there is no validation errors', () => {
-    
+
         it('should call next function', () => {
 
             validationResult.mockReturnValue(
                 {
-                    isEmpty(){
+                    isEmpty() {
                         return true
                     }
                 }
             )
-            
+
             const next = jest.fn()
 
             validateRequest(jest.fn(), jest.fn(), next)
-            
+
             expect(next.mock.calls.length).toBe(1)
         })
     })
 
     describe('when there is some validation errors', () => {
-    
+
         it('should throw RequestValidationError', () => {
 
             validationResult.mockReturnValue(
                 {
-                    isEmpty(){
+                    isEmpty() {
                         return false
                     },
-                    array(){
+                    array() {
                         return this
                     }
                 }
             )
-            
+
             expect(() => { validateRequest(jest.fn(), jest.fn(), jest.fn()) }).toThrow(RequestValidationError)
         })
     })

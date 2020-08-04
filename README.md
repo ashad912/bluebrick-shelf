@@ -86,7 +86,7 @@ Additional fields are ignored.
 
 ### GET - /api/feed
 
-User can fetch a feed of books rated by other users **after user registration date**. User can never see the same action twice in different requests. User can never see own actions. User must be signed in to perform this action.
+User can fetch a feed of books (sorted from newest to oldest) rated by other users **after user registration date**. User can never see the same action twice in different requests. User can never see own actions. User must be signed in to perform this action.
 
 
 

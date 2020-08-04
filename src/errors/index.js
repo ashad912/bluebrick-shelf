@@ -7,7 +7,7 @@ import RequestValidationError from './request-validation'
 
 export default {
     CustomError,
-    BadRequestError, 
+    BadRequestError,
     NotAuthorizedError,
     NotFoundError,
     RequestValidationError

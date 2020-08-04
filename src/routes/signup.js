@@ -25,11 +25,11 @@ router.post(
         .send({
             data: {
                 user
-            }, 
-            message: 'Account registered'   
+            },
+            message: 'Account registered'
         })
     }
 )
-    
+
 
 export default router

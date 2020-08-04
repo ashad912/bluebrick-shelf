@@ -1,7 +1,6 @@
 import Book from '@models/book.model'
 import BadRequestError from '@errors/bad-request'
 
-
 const populateSamples = async () => {
     const books = [
         {
@@ -35,11 +34,10 @@ const populateSamples = async () => {
     await Book.insertMany(books)
 }
 
-
 const addRate = async (bookNo, rateObject) => {
     const book = await Book.findOne({ bookNo })
 
-    if(!book){
+    if (!book) {
         throw new BadRequestError('Book does not exist')
     }
 
@@ -48,13 +46,13 @@ const addRate = async (bookNo, rateObject) => {
         return el.user.toString() === rateObject.user.toString()
     })
 
-    if(userIndex >= 0){
+    if (userIndex >= 0) {
         // Modify - if not passed, previous possibly non-null review will not be overwritten by null value
-        for (const field in rateObject){
+        for (const field in rateObject) {
             book.userRating[userIndex][field] = rateObject[field]
         }
-        
-    }else{
+
+    } else {
         // Add
         book.userRating = [...book.userRating, rateObject]
     }
