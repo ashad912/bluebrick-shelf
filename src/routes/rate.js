@@ -38,7 +38,7 @@ router.post(
                 return true
             })
             .optional()
-            .withMessage('Review must be string up 200 characters long'),
+            .withMessage('Review must be string up to 200 characters long'),
     ],
     validateRequest,
     async (req, res) => {
