@@ -9,21 +9,21 @@ User is able to sign up, sign in and sign out.
 ### Using docker-compose: 
 
 #### Run app:
-1. Run: docker-compose up --build
+1. Run: **docker-compose up --build**
 
 #### Run tests:
-1. Run: docker-compose build
-2. Run: docker-compose run node-app npm test
+1. Run: **docker-compose build**
+2. Run: **docker-compose run node-app npm test**
 
 ### Manually:
 
 #### Run app:
 1. Install and run MongoDB server
-2. Run: npm start
+2. Run: **npm start**
 
 #### Run tests:
 1. Install and run MongoDB server
-2. Run: npm test
+2. Run: **npm test**
 
 ## API Documentation
 
