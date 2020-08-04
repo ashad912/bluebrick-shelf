@@ -19,11 +19,13 @@ User is able to sign up, sign in and sign out.
 
 #### Run app:
 1. Install and run MongoDB server
-2. Run: **npm start**
+2. Run: **npm install**
+3. Run: **npm start**
 
 #### Run tests:
 1. Install and run MongoDB server
-2. Run: **npm test**
+2. Run: **npm install**
+3. Run: **npm test**
 
 ## API Documentation
 

@@ -1,10 +1,6 @@
 import dotenv from 'dotenv';
 
-const envFound = dotenv.config();
-
-if (!process.env.COMPOSE && envFound.error) {
-  throw new Error("Couldn't find .env file");
-}
+dotenv.config();
 
 export default {
     nodeEnv: process.env.NODE_ENV || 'dev',
