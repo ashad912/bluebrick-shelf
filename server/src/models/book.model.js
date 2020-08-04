@@ -2,11 +2,15 @@ import mongoose from 'mongoose'
 import RatingSchema from '@schemas/rating'
 
 const BookSchema = new mongoose.Schema({
+    bookNo: {
+        type: Number,
+        required: true
+    },
     name: {
         type: String,
         required: true
     },
-    imageURL: {
+    imageUrl: {
         type: String,
         required: true
     },

@@ -1,3 +1,5 @@
+import mongoose from 'mongoose'
+
 export default new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
@@ -14,5 +16,8 @@ export default new mongoose.Schema({
             }
         },
     },
-    review: String
+    review: {
+        type: String,
+        default: null
+    }
 })

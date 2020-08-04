@@ -1,8 +1,11 @@
 import CustomError from '@errors/custom-error';
+import config from '@config'
 
 export default (err, req, res, next) => {
 
-  console.log(err);
+  if(config.nodeEnv === 'dev'){
+    console.log(err)
+  }
 
   if (err instanceof CustomError) {
     return res.status(err.statusCode).send({ errors: err.serializeErrors() });

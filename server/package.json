@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch --runInBand",
+    "test": "set NODE_ENV=test&& jest --watch --runInBand --coverage",
     "dev": "env-cmd -f ./.env npm run start",
     "start": "nodemon --exec babel-node src/index.js"
   },
@@ -20,6 +20,7 @@
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
+    "express-validator": "^6.6.1",
     "jest": "^26.2.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.27"

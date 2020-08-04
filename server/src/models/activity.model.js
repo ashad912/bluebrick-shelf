@@ -6,10 +6,6 @@ const ActivitySchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'book',
     },
-    seenBy: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'user',
-    }]
     ...RatingSchema.obj
 }, { timestamps: true })
 

@@ -2,7 +2,7 @@ import CustomError from './custom-error'
 
 export default class RequestValidationError extends CustomError {
 
-    statusCode = 400;
+    statusCode = 422;
     
     constructor(errors){
         super('Invalid request parameters') 

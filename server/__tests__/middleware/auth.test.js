@@ -15,11 +15,12 @@ describe('Auth middleware', () => {
     const user = new User()
     const expectedUserId = user._id
 
-
+    const spy = jest.spyOn(userService, 'getUserFromToken')
+    spy.mockReturnValue(user)
+    
+    const next = jest.fn()
+    
     it('should modify req object with user and token, and call next() once', async () => {
-        const spy = jest.spyOn(userService, 'getUserFromToken')
-        const next = jest.fn()
-        spy.mockReturnValue(user)
         
         await auth(req, jest.fn(), next)
         

@@ -3,5 +3,10 @@ import mongooseLoader from './mongoose';
 
 export default async () => {
     await mongooseLoader()
-    return expressLoader()
+    console.log('DB connected')
+    
+    const app = expressLoader()
+    console.log('Express loaded')
+
+    return app
 }

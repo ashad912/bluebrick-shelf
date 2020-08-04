@@ -11,8 +11,5 @@ export default async () => {
         useUnifiedTopology: true
     }
 
-
-    await mongoose.connect(config.mongoURL, options);
-    console.log('DB connected')
-
+    await mongoose.connect(config.mongoUrl, options);
 };

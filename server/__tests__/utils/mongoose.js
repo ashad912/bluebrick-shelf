@@ -8,13 +8,9 @@ const options = {
     useUnifiedTopology: true
 }
 
-//mongo connection in setup file is not preferred due to integration tests application
 
-const connect = () => mongoose.connect(config.mongoURLTests, options)
+export const connect = () => mongoose.connect(config.mongoUrlTests, options)
 
-const disconnect = () => mongoose.connection.close()
+export const disconnect = () => mongoose.connection.close()
 
-export default {
-    connect,
-    disconnect
-}
+export const objectId = () => new mongoose.Types.ObjectId()
