@@ -3,6 +3,7 @@
 Users rate provided books, and get a feed of books recently rated by other users.
 User is able to sign up, sign in and sign out.
 
+Tried to make code self-commented!
 
 ## Setup
 
@@ -33,7 +34,7 @@ At the server start, app clears up all existing activities and populates five sa
 
 Server listens to **localhost:4000**.
 
-**Warning!** If you user Docker Toolbox or Minikube, server will listen to **192.168.99.100:4000**.
+**Warning!** If you use Docker Toolbox or Minikube, server will listen to **192.168.99.100:4000**.
 
 ### POST - /api/signup
 
