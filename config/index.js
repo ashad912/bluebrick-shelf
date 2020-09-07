@@ -1,6 +1,12 @@
 import dotenv from 'dotenv';
 
-dotenv.config();
+let options = {}
+
+if (process.env.NODE_ENV === 'prod') {
+  options = { path: 'cloud.env' }
+}
+
+dotenv.config(options);
 
 export default {
   nodeEnv: process.env.NODE_ENV || 'dev',
