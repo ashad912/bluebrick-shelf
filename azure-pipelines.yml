@@ -10,10 +10,6 @@ steps:
     inputs:
       versionSpec: $(node_version)
 
-  # Map secret .env value(s)
-  - powershell: |
-    env:
-      MONGO_URL_TESTS: $(SECRET_MONGO_URL_TESTS) # the recommended way to map to an env variable
 
   # Install dev dependencies
   - script: npm install
@@ -21,11 +17,13 @@ steps:
     displayName: 'Install dependencies'
 
 
-    # Execute unit tests
+  # Execute unit tests
   - script: set MONGO_URL_TESTS=$MONGO_URL_TESTS&& npm run-script test:ci
     workingDirectory: $(System.DefaultWorkingDirectory)/server
-    displayName: 'Execute unit tests'
+    displayName: 'Execute tests'
     continueOnError: true
+    env:
+      MONGO_URL_TESTS: $(SECRET_MONGO_URL_TESTS) 
 
   # Publish unit test results
   - task: PublishTestResults@2
@@ -33,9 +31,9 @@ steps:
       testResultsFormat: 'JUnit'
       testResultsFiles: '**/junit.xml'
       mergeTestResults: true
-      testRunTitle: 'Jest Unit Tests'
+      testRunTitle: 'Jest Tests'
       failTaskOnFailedTests: true
-    displayName: 'Publish unit test report'
+    displayName: 'Publish tests report'
 
   - task: ArchiveFiles@1
     displayName: 'Archive files '
