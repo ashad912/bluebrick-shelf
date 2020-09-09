@@ -11,17 +11,17 @@ steps:
       versionSpec: $(node_version)
 
   #Cache node_modules
-  - task: RestoreAndSaveCache@1
+  - task: Cache@2
     inputs:
-      keyfile: '**/package-lock.json, !**/node_modules/**/package-lock.json, !**/.*/**/package-lock.json'
-      targetfolder: '**/node_modules, !**/node_modules/**/node_modules'
-      vstsFeed: '8eaf2cba-03ff-4c23-b6bb-ca0adaebc7e4'
-      platformIndependent: true
+      key: 'npm | “$(Agent.OS)” | $(Build.SourcesDirectory)/server/package-lock.json'
+      path: '$(Build.SourcesDirectory)/server/node_modules'
+      cacheHitVar: 'CacheRestored'
 
   # Install dev dependencies
   - script: npm install --force
     workingDirectory: $(System.DefaultWorkingDirectory)/server
     displayName: 'Install dependencies'
+    condition: ne(variables['CacheRestored'], 'true')
 
 
   # Execute unit tests
