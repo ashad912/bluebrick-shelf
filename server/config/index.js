@@ -6,6 +6,7 @@ if (process.env.ATLAS === 'true') {
   options = { path: 'cloud.env' }
 }
 
+console.log(process.env.NODE_ENV)
 console.log(process.env.MONGO_URL_TESTS)
 
 dotenv.config(options);
