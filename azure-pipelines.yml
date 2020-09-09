@@ -18,7 +18,7 @@ steps:
       cacheHitVar: 'CacheRestored'
 
   # Install dev dependencies
-  - script: npm install --force
+  - script: npm install
     workingDirectory: $(System.DefaultWorkingDirectory)/server
     displayName: 'Install dependencies'
     condition: ne(variables['CacheRestored'], 'true')
