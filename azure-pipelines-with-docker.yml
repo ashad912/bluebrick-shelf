@@ -3,7 +3,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-- master
+- azure-pipelines-with-docker
 
 resources:
 - repo: self
@@ -51,7 +51,7 @@ stages:
       displayName: 'Copy File to: $(TargetFolder)'
       inputs:
         SourceFolder: '$(Build.ArtifactStagingDirectory)'
-        Contents: '**/docker-compose.yml'
+        Contents: '**/server/docker-compose.yml'
         TargetFolder: '$(Build.ArtifactStagingDirectory)\ArtifactsToBePublished'
 
     - task: PublishBuildArtifacts@1
