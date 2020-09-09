@@ -1,0 +1,51 @@
+variables:
+  node_version: 10.x
+  code_coverge_threshold: '60'
+
+pool:
+  vmImage: 'ubuntu-16.04'
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: $(node_version)
+
+  # Install dev dependencies
+  - script: npm install
+    workingDirectory: $(System.DefaultWorkingDirectory)/server
+    displayName: 'Install dependencies'
+
+
+    # Execute unit tests
+  - script: npm run-script test:ci
+    workingDirectory: $(System.DefaultWorkingDirectory)/server
+    displayName: 'Execute unit tests'
+    continueOnError: true
+
+  # Publish unit test results
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/junit.xml'
+      mergeTestResults: true
+      testRunTitle: 'Jest Unit Tests'
+      failTaskOnFailedTests: true
+    displayName: 'Publish unit test report'
+
+  - task: ArchiveFiles@1
+    displayName: 'Archive files '
+    inputs:
+      rootFolder: '$(System.DefaultWorkingDirectory)'
+      includeRootFolder: false
+
+  - task: CopyFiles@2
+    displayName: 'Copy File to: $(TargetFolder)'
+    inputs:
+      SourceFolder: '$(Build.ArtifactStagingDirectory)'
+      Contents: '$(Build.BuildId).zip'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)\ArtifactsToBePublished'
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: drop'
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)\ArtifactsToBePublished'
