@@ -1,0 +1,22 @@
+# Starter pipeline
+
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Azure Container Registry'
+    azureSubscription: 'Free Trial (7bfac3ac-8201-45dd-aa5b-91b25b6587c9)'
+    azureContainerRegistry: '{"loginServer":"bbshelf.azurecr.io", "id" : "/subscriptions/7bfac3ac-8201-45dd-aa5b-91b25b6587c9/resourceGroups/bluebrick-shelf/providers/Microsoft.ContainerRegistry/registries/bbshelf"}'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Run a Docker Compose command'
+    dockerComposeCommand: 'docker-compose run node-app npm test:ci'
+    arguments: '--build'
