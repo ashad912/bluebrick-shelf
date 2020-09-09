@@ -12,7 +12,7 @@ steps:
 
 
   # Install dev dependencies
-  - script: npm install
+  - script: npm install --force
     workingDirectory: $(System.DefaultWorkingDirectory)/server
     displayName: 'Install dependencies'
 
