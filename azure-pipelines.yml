@@ -1,3 +1,5 @@
+trigger:
+  - master
 variables:
   node_version: 10.x
   code_coverge_threshold: '60'
