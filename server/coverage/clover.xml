@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1596560536236" clover="3.2.0">
-  <project timestamp="1596560536236" name="All files">
-    <metrics statements="176" coveredstatements="173" conditionals="50" coveredconditionals="47" methods="45" coveredmethods="44" elements="271" coveredelements="264" complexity="0" loc="176" ncloc="176" packages="9" files="24" classes="24"/>
+<coverage generated="1596556222211" clover="3.2.0">
+  <project timestamp="1596556222211" name="All files">
+    <metrics statements="178" coveredstatements="174" conditionals="54" coveredconditionals="46" methods="45" coveredmethods="44" elements="277" coveredelements="264" complexity="0" loc="178" ncloc="178" packages="9" files="24" classes="24"/>
     <package name="__tests__.utils">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <file name="mongoose.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\__tests__\utils\mongoose.js">
+      <file name="mongoose.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\__tests__\utils\mongoose.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="4" count="10" type="stmt"/>
         <line num="12" count="10" type="stmt"/>
@@ -13,15 +13,17 @@
       </file>
     </package>
     <package name="config">
-      <metrics statements="1" coveredstatements="1" conditionals="10" coveredconditionals="9" methods="0" coveredmethods="0"/>
-      <file name="index.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\config\index.js">
-        <metrics statements="1" coveredstatements="1" conditionals="10" coveredconditionals="9" methods="0" coveredmethods="0"/>
+      <metrics statements="3" coveredstatements="2" conditionals="14" coveredconditionals="8" methods="0" coveredmethods="0"/>
+      <file name="index.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\config\index.js">
+        <metrics statements="3" coveredstatements="2" conditionals="14" coveredconditionals="8" methods="0" coveredmethods="0"/>
         <line num="3" count="12" type="stmt"/>
+        <line num="5" count="12" type="cond" truecount="3" falsecount="1"/>
+        <line num="6" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.errors">
       <metrics statements="24" coveredstatements="23" conditionals="2" coveredconditionals="2" methods="11" coveredmethods="10"/>
-      <file name="bad-request.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\errors\bad-request.js">
+      <file name="bad-request.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\errors\bad-request.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="5" count="16" type="stmt"/>
         <line num="8" count="16" type="stmt"/>
@@ -29,7 +31,7 @@
         <line num="12" count="16" type="stmt"/>
         <line num="16" count="4" type="stmt"/>
       </file>
-      <file name="custom-error.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\errors\custom-error.js">
+      <file name="custom-error.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\errors\custom-error.js">
         <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
         <line num="4" count="36" type="stmt"/>
         <line num="6" count="36" type="stmt"/>
@@ -37,24 +39,24 @@
         <line num="9" count="1" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
       </file>
-      <file name="index.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\errors\index.js">
+      <file name="index.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\errors\index.js">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
-      <file name="not-authorized.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\errors\not-authorized.js">
+      <file name="not-authorized.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\errors\not-authorized.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="5" count="6" type="stmt"/>
         <line num="8" count="6" type="stmt"/>
         <line num="10" count="6" type="stmt"/>
         <line num="14" count="4" type="stmt"/>
       </file>
-      <file name="not-found.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\errors\not-found.js">
+      <file name="not-found.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\errors\not-found.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="5" count="4" type="stmt"/>
         <line num="8" count="4" type="stmt"/>
         <line num="10" count="4" type="stmt"/>
         <line num="14" count="4" type="stmt"/>
       </file>
-      <file name="request-validation.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\errors\request-validation.js">
+      <file name="request-validation.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\errors\request-validation.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="5" count="9" type="stmt"/>
         <line num="8" count="9" type="stmt"/>
@@ -66,34 +68,34 @@
     </package>
     <package name="src.loaders">
       <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="express.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\loaders\express.js">
+      <file name="express.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\loaders\express.js">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="18" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
         <line num="19" count="6" type="stmt"/>
-        <line num="21" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
         <line num="22" count="6" type="stmt"/>
         <line num="23" count="6" type="stmt"/>
         <line num="24" count="6" type="stmt"/>
         <line num="25" count="6" type="stmt"/>
-        <line num="27" count="6" type="stmt"/>
-        <line num="28" count="2" type="stmt"/>
-        <line num="31" count="6" type="stmt"/>
-        <line num="34" count="6" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="35" count="6" type="stmt"/>
       </file>
     </package>
     <package name="src.middleware">
       <metrics statements="17" coveredstatements="16" conditionals="12" coveredconditionals="11" methods="3" coveredmethods="3"/>
-      <file name="auth.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\middleware\auth.js">
+      <file name="auth.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\middleware\auth.js">
         <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="5" count="12" type="stmt"/>
-        <line num="7" count="12" type="cond" truecount="2" falsecount="0"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="11" count="9" type="stmt"/>
-        <line num="12" count="9" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="9" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="13" count="9" type="stmt"/>
         <line num="14" count="9" type="stmt"/>
+        <line num="16" count="9" type="stmt"/>
       </file>
-      <file name="error-handler.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\middleware\error-handler.js">
+      <file name="error-handler.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\middleware\error-handler.js">
         <metrics statements="7" coveredstatements="6" conditionals="8" coveredconditionals="7" methods="1" coveredmethods="1"/>
         <line num="6" count="18" type="cond" truecount="1" falsecount="1"/>
         <line num="7" count="0" type="stmt"/>
@@ -103,7 +105,7 @@
         <line num="15" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
       </file>
-      <file name="validate-request.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\middleware\validate-request.js">
+      <file name="validate-request.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\middleware\validate-request.js">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="5" count="16" type="stmt"/>
         <line num="7" count="16" type="cond" truecount="2" falsecount="0"/>
@@ -113,15 +115,15 @@
     </package>
     <package name="src.models">
       <metrics statements="31" coveredstatements="31" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
-      <file name="activity.model.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\models\activity.model.js">
+      <file name="activity.model.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\models\activity.model.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="4" count="7" type="stmt"/>
       </file>
-      <file name="book.model.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\models\book.model.js">
+      <file name="book.model.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\models\book.model.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="4" count="8" type="stmt"/>
       </file>
-      <file name="user.model.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\models\user.model.js">
+      <file name="user.model.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\models\user.model.js">
         <metrics statements="29" coveredstatements="29" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
         <line num="7" count="10" type="stmt"/>
         <line num="36" count="10" type="stmt"/>
@@ -156,7 +158,7 @@
     </package>
     <package name="src.routes">
       <metrics statements="39" coveredstatements="39" conditionals="10" coveredconditionals="10" methods="9" coveredmethods="9"/>
-      <file name="feed.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\routes\feed.js">
+      <file name="feed.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\routes\feed.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="6" count="6" type="stmt"/>
         <line num="8" count="6" type="stmt"/>
@@ -166,7 +168,7 @@
         <line num="22" count="2" type="stmt"/>
         <line num="31" count="2" type="stmt"/>
       </file>
-      <file name="rate.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\routes\rate.js">
+      <file name="rate.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\routes\rate.js">
         <metrics statements="20" coveredstatements="20" conditionals="10" coveredconditionals="10" methods="4" coveredmethods="4"/>
         <line num="8" count="6" type="stmt"/>
         <line num="10" count="6" type="stmt"/>
@@ -189,21 +191,21 @@
         <line num="75" count="2" type="stmt"/>
         <line num="77" count="2" type="stmt"/>
       </file>
-      <file name="signin.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\routes\signin.js">
+      <file name="signin.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\routes\signin.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="6" count="6" type="stmt"/>
         <line num="8" count="6" type="stmt"/>
         <line num="21" count="3" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
       </file>
-      <file name="signout.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\routes\signout.js">
+      <file name="signout.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\routes\signout.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="6" type="stmt"/>
         <line num="7" count="6" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
       </file>
-      <file name="signup.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\routes\signup.js">
+      <file name="signup.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\routes\signup.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="6" count="6" type="stmt"/>
         <line num="8" count="6" type="stmt"/>
@@ -213,7 +215,7 @@
     </package>
     <package name="src.schemas">
       <metrics statements="2" coveredstatements="1" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="rating.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\schemas\rating.js">
+      <file name="rating.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\schemas\rating.js">
         <metrics statements="2" coveredstatements="1" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="14" count="21" type="cond" truecount="1" falsecount="1"/>
         <line num="15" count="0" type="stmt"/>
@@ -221,60 +223,60 @@
     </package>
     <package name="src.services">
       <metrics statements="46" coveredstatements="46" conditionals="8" coveredconditionals="8" methods="12" coveredmethods="12"/>
-      <file name="activity.service.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\services\activity.service.js">
+      <file name="activity.service.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\services\activity.service.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="3" count="7" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="12" count="7" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="33" count="7" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="35" count="7" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
       </file>
-      <file name="book.service.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\services\book.service.js">
+      <file name="book.service.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\services\book.service.js">
         <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
-        <line num="4" count="7" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
-        <line num="37" count="7" type="stmt"/>
-        <line num="38" count="8" type="stmt"/>
-        <line num="40" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="41" count="1" type="stmt"/>
-        <line num="45" count="7" type="stmt"/>
-        <line num="46" count="4" type="stmt"/>
-        <line num="49" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="51" count="3" type="stmt"/>
-        <line num="52" count="7" type="stmt"/>
-        <line num="57" count="4" type="stmt"/>
-        <line num="60" count="7" type="stmt"/>
-        <line num="62" count="7" type="stmt"/>
-      </file>
-      <file name="user.service.js" path="C:\Users\Stachu\Documents\VSC\bluebrick-shelf\src\services\user.service.js">
-        <metrics statements="23" coveredstatements="23" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="11" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="23" count="8" type="stmt"/>
-        <line num="25" count="6" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
-        <line num="28" count="2" type="stmt"/>
-        <line num="31" count="8" type="stmt"/>
-        <line num="32" count="10" type="stmt"/>
-        <line num="33" count="10" type="stmt"/>
-        <line num="34" count="10" type="cond" truecount="2" falsecount="0"/>
         <line num="35" count="1" type="stmt"/>
-        <line num="38" count="9" type="stmt"/>
-        <line num="41" count="8" type="stmt"/>
-        <line num="43" count="3" type="stmt"/>
-        <line num="52" count="8" type="stmt"/>
-        <line num="54" count="2" type="stmt"/>
-        <line num="55" count="2" type="stmt"/>
+        <line num="39" count="7" type="stmt"/>
+        <line num="40" count="8" type="stmt"/>
+        <line num="42" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="47" count="7" type="stmt"/>
+        <line num="48" count="4" type="stmt"/>
+        <line num="51" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="3" type="stmt"/>
+        <line num="54" count="7" type="stmt"/>
+        <line num="59" count="4" type="stmt"/>
+        <line num="62" count="7" type="stmt"/>
+        <line num="64" count="7" type="stmt"/>
+      </file>
+      <file name="user.service.js" path="C:\Users\krzys\Documents\VS\bluebrick-shelf\src\services\user.service.js">
+        <metrics statements="23" coveredstatements="23" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="12" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="24" count="8" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="32" count="8" type="stmt"/>
+        <line num="33" count="10" type="stmt"/>
+        <line num="34" count="10" type="stmt"/>
+        <line num="35" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="39" count="9" type="stmt"/>
+        <line num="43" count="8" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="54" count="8" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
         <line num="57" count="2" type="stmt"/>
         <line num="59" count="2" type="stmt"/>
+        <line num="61" count="2" type="stmt"/>
       </file>
     </package>
   </project>

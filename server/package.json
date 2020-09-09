@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "set NODE_ENV=test&& jest --watchAll --runInBand --coverage",
-		"test:ci": "set NODE_ENV=test&& jest --ci --reporters=jest-junit --reporters=default",
+		"test:ci": "set NODE_ENV=test&& node_modules/.bin/jest --ci --reporters=jest-junit --reporters=default",
 		"start": "nodemon --exec babel-node src/index.js",
 		"start:cloud": "set NODE_ENV=prod&& nodemon --exec babel-node src/index.js"
 	},
