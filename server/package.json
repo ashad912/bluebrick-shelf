@@ -5,9 +5,10 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "set NODE_ENV=test&& jest --watchAll --runInBand --coverage",
+		"test:atlas": "set NODE_ENV=test&& set ATLAS=true&& jest --watchAll --runInBand --coverage",
 		"test:ci": "set NODE_ENV=test&& node_modules/.bin/jest --ci --reporters=jest-junit --reporters=default",
 		"start": "nodemon --exec babel-node src/index.js",
-		"start:cloud": "set NODE_ENV=prod&& nodemon --exec babel-node src/index.js"
+		"start:atlas": "set ATLAS=true&& nodemon --exec babel-node src/index.js"
 	},
 	"keywords": [],
 	"author": "Krzysztof Łoś",

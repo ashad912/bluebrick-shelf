@@ -9,7 +9,10 @@ const options = {
 }
 
 
-export const connect = () => mongoose.connect(config.mongoUrlTests, options)
+export const connect = () => {
+    console.log(config.mongoUrlTests)
+    return mongoose.connect(config.mongoUrlTests, options)
+}
 
 export const disconnect = () => mongoose.connection.close()
 

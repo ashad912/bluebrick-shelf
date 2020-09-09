@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 
 let options = {}
 
-if (process.env.NODE_ENV === 'prod') {
+if (process.env.ATLAS === 'true') {
   options = { path: 'cloud.env' }
 }
 
