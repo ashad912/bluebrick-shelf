@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "set NODE_ENV=test&& jest --watchAll --runInBand --coverage",
+		"test:ci": "set NODE_ENV=test&& jest --ci --reporters=jest-junit --reporters=default",
 		"start": "nodemon --exec babel-node src/index.js",
 		"start:cloud": "set NODE_ENV=prod&& nodemon --exec babel-node src/index.js"
 	},
@@ -32,6 +33,7 @@
 		"@babel/node": "^7.8.7",
 		"@babel/plugin-proposal-class-properties": "^7.10.4",
 		"@babel/preset-env": "^7.9.6",
+		"jest-junit": "^11.1.0",
 		"nodemon": "^2.0.4",
 		"supertest": "^4.0.2"
 	},
