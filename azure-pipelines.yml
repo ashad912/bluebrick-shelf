@@ -10,6 +10,13 @@ steps:
     inputs:
       versionSpec: $(node_version)
 
+  #Cache node_modules
+  - task: RestoreAndSaveCache@1
+    inputs:
+      keyfile: '**/package-lock.json, !**/node_modules/**/package-lock.json, !**/.*/**/package-lock.json'
+      targetfolder: '**/node_modules, !**/node_modules/**/node_modules'
+      vstsFeed: '8eaf2cba-03ff-4c23-b6bb-ca0adaebc7e4'
+      platformIndependent: true
 
   # Install dev dependencies
   - script: npm install --force
