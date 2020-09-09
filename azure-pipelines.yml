@@ -1,7 +1,6 @@
 variables:
   node_version: 10.x
   code_coverge_threshold: '60'
-  mongo_url_tests: $(MONGO_URL_TESTS)
 
 pool:
   vmImage: 'ubuntu-16.04'
@@ -10,7 +9,12 @@ steps:
   - task: NodeTool@0
     inputs:
       versionSpec: $(node_version)
-
+ 
+  # Map secret .env value(s)
+  - powershell: |
+    env:
+      MONGO_URL_TESTS: $(SECRET_MONGO_URL_TESTS) # the recommended way to map to an env variable
+  
   # Install dev dependencies
   - script: npm install
     workingDirectory: $(System.DefaultWorkingDirectory)/server
@@ -18,7 +22,7 @@ steps:
 
 
     # Execute unit tests
-  - script: set MONGO_URL_TESTS=$(mongo_url_tests)&& npm run-script test:ci
+  - script: set MONGO_URL_TESTS=$(MONGO_URL_TESTS)&& npm run-script test:ci
     workingDirectory: $(System.DefaultWorkingDirectory)/server
     displayName: 'Execute unit tests'
     continueOnError: true
