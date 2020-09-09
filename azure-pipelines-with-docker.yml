@@ -46,11 +46,8 @@ stages:
         action: 'Run a Docker Compose command'
         dockerComposeCommand: 'run node-app npm run test:ci'
 
-
     - task: CopyFiles@2
-      displayName: 'Copy File to: $(TargetFolder)'
       inputs:
-        SourceFolder: '$(Build.ArtifactStagingDirectory)'
         Contents: '**/server/docker-compose.yml'
         TargetFolder: '$(Build.ArtifactStagingDirectory)\ArtifactsToBePublished'
 
