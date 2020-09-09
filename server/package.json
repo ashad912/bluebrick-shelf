@@ -1,7 +1,7 @@
 {
 	"name": "bluebrick-shelf",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Development",
 	"main": "index.js",
 	"scripts": {
 		"test": "set NODE_ENV=test&& jest --watchAll --runInBand --coverage",
