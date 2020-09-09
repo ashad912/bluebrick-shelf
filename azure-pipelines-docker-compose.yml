@@ -11,6 +11,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+
 - task: DockerCompose@0
   inputs:
     containerregistrytype: 'Azure Container Registry'
@@ -18,5 +19,17 @@ steps:
     azureContainerRegistry: '{"loginServer":"bbshelf.azurecr.io", "id" : "/subscriptions/7bfac3ac-8201-45dd-aa5b-91b25b6587c9/resourceGroups/bluebrick-shelf/providers/Microsoft.ContainerRegistry/registries/bbshelf"}'
     dockerComposeFile: '**/docker-compose.yml'
     action: 'Run a Docker Compose command'
-    dockerComposeCommand: 'run node-app npm run test:ci'
+    dockerComposeCommand: 'run node-app npm test:ci'
     arguments: '--build'
+- task: CopyFiles@2
+  displayName: 'Copy File to: $(TargetFolder)'
+  inputs:
+    SourceFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: '**/docker-compose.yml'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)\ArtifactsToBePublished'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)\ArtifactsToBePublished'
+
