@@ -13,7 +13,7 @@ steps:
   #Cache node_modules
   - task: Cache@2
     inputs:
-      key: 'npm | “$(Agent.OS)” | $(Build.SourcesDirectory)/server/package-lock.json'
+      key: 'npm | “$(Agent.OS)” | $(Build.SourcesDirectory)/server/package.json'
       path: '$(Build.SourcesDirectory)/server/node_modules'
       cacheHitVar: 'CacheRestored'
 
