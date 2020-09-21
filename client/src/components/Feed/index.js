@@ -2,7 +2,9 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchActivities } from 'store/actions'
 
-import { List } from '@material-ui/core'
+import { List, Paper } from '@material-ui/core'
+
+import './Feed.scss'
 
 
 export default () => {
@@ -18,9 +20,9 @@ export default () => {
 
     return (
         <div style={{ width: '100%' }} data-testid='feed_component'>
+            <Paper className='PaperRoot'>
+                <List data-testid="feed_list">
 
-            <List data-testid="feed_list">
-                <React.Fragment>
                     {activities.length ? activities.map((activity, index) => {
                         return (
                             <li key={index} data-testid='activity'>
@@ -32,8 +34,9 @@ export default () => {
                     }) : (
                             <h1>No activities!</h1>
                         )}
-                </React.Fragment>
-            </List>
+
+                </List>
+            </Paper>
         </div>
     )
 }

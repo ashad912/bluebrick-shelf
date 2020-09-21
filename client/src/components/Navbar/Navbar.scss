@@ -1,0 +1,36 @@
+.ToolbarRoot {
+	//flex-grow: 1;
+	display: flex;
+	justify-content: flex-end;
+	height: 64px;
+}
+
+.NavbarTitle {
+	flex-grow: 1;
+}
+
+.TypoLinkContainer {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding: 0 10px;
+	color: white !important;
+	cursor: pointer !important;
+	text-decoration: none !important;
+
+	&:visited {
+		color: white !important;
+	}
+	&:hover {
+		background-color: lighten(#333333, 10);
+	}
+}
+
+.LinkStyle {
+	color: white !important;
+	cursor: pointer !important;
+	text-decoration: none !important;
+	&:visited {
+		color: white !important;
+	}
+}

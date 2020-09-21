@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect, useDispatch } from 'react-redux'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Feed from 'components/Feed';
+import Navbar from 'components/Navbar';
 import SignUp from 'components/SignUp';
 import SignIn from 'components/SignIn';
 import withAuth from 'components/hoc/withAuth';
@@ -19,12 +20,10 @@ const App = (props) => {
   const dispatch = useDispatch()
 
   const auth = async () => {
-    try {
-      await dispatch(authCheck())
-      setLoaded(true)
-    } catch (e) {
-      console.error('API call failed. Check Network tab.')
-    }
+
+    await dispatch(authCheck())
+    setLoaded(true)
+
   }
 
   useEffect(() => {
@@ -37,6 +36,7 @@ const App = (props) => {
 
   return (
     <BrowserRouter>
+      <Navbar />
       <div className="root">
         <Switch>
           <Route exact path="/" component={withAuth(Feed)} />

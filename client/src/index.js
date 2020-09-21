@@ -16,11 +16,9 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      // Purple and green play nicely together.
       main: '#0080c0',
     },
     secondary: {
-      // This is green.A700 as hex.
       main: '#333333',
     },
     background: {

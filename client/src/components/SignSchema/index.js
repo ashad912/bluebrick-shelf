@@ -9,7 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ErrorIcon from '@material-ui/icons/Error';
 
-import "./SignSchema.css"
+import "./SignSchema.scss"
 
 import FormikField from '../FormikField'
 
@@ -81,6 +81,7 @@ const SignSchema = (props) => {
                                 </Paper>
                             )}
                             <Button
+                                className="SubmitButton"
                                 variant="contained"
                                 color="secondary"
                                 disabled={!dirty || !isValid}

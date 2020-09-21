@@ -5,6 +5,7 @@ import {
     AUTH_SUCCESS,
     SIGNUP_SUCCESS,
     SIGNIN_SUCCESS,
+    SIGNOUT_SUCCESS,
     NO_AUTH
 } from './types'
 
@@ -62,6 +63,20 @@ export const authCheck = () => {
         try {
             const res = await axios.get('/me')
             dispatch({ type: AUTH_SUCCESS, uid: res.data._id })
+
+        } catch (e) {
+            dispatch({ type: NO_AUTH })
+        }
+    }
+}
+
+export const signOut = () => {
+
+    return async (dispatch) => {
+
+        try {
+            const res = await axios.post('/signout')
+            dispatch({ type: SIGNOUT_SUCCESS })
 
         } catch (e) {
             dispatch({ type: NO_AUTH })

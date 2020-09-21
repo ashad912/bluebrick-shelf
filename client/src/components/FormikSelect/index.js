@@ -8,7 +8,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-import './FormikSelect.css'
+import './FormikSelect.scss'
 
 const FormikFormControl = (props) => {
 

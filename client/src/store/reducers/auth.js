@@ -1,4 +1,4 @@
-import { SIGNUP_SUCCESS, AUTH_ERROR, SIGNIN_SUCCESS, AUTH_SUCCESS, NO_AUTH } from 'store/actions/types'
+import { SIGNUP_SUCCESS, AUTH_ERROR, SIGNIN_SUCCESS, AUTH_SUCCESS, NO_AUTH, SIGNOUT_SUCCESS } from 'store/actions/types'
 
 export const initState = {
     uid: null,
@@ -37,6 +37,9 @@ export default (state = initState, action) => {
             }
         }
         case NO_AUTH: {
+            return { ...initState }
+        }
+        case SIGNOUT_SUCCESS: {
             return { ...initState }
         }
         default:
