@@ -1,24 +1,33 @@
-import { SIGNUP_SUCCESS, SIGNUP_ERROR, AUTH_SUCCESS, NO_AUTH } from 'store/actions'
+import { SIGNUP_SUCCESS, AUTH_ERROR, SIGNIN_SUCCESS, AUTH_SUCCESS, NO_AUTH } from 'store/actions/types'
 
 export const initState = {
     uid: null,
     authError: null
 }
 
-export const SINGUP_FAILED_MSSG = 'Signup failed'
+export const SIGNUP_FAILED_MSSG = 'Sign up failed'
+export const SIGNIN_FAILED_MSSG = 'Sign in failed'
 
 export default (state = initState, action) => {
     switch (action.type) {
         case SIGNUP_SUCCESS: {
             return {
                 ...state,
-                uid: action.uid
+                authError: null
             }
         }
-        case SIGNUP_ERROR: {
+        case SIGNIN_SUCCESS: {
+            console.log(action.uid)
             return {
                 ...state,
-                authError: SINGUP_FAILED_MSSG
+                uid: action.uid,
+                authError: null
+            }
+        }
+        case AUTH_ERROR: {
+            return {
+                ...state,
+                authError: action.error
             }
         }
         case AUTH_SUCCESS: {
@@ -30,5 +39,7 @@ export default (state = initState, action) => {
         case NO_AUTH: {
             return { ...initState }
         }
+        default:
+            return state
     }
 }

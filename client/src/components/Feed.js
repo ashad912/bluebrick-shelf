@@ -19,9 +19,9 @@ export default () => {
     return (
         <div style={{ width: '100%' }} data-testid='feed_component'>
 
-            <List className={classes.list} data-testid="feed_list">
+            <List data-testid="feed_list">
                 <React.Fragment>
-                    {activities.map((activity, index) => {
+                    {activities.length ? activities.map((activity, index) => {
                         return (
                             <li key={index} data-testid='activity'>
                                 <p>{activity.bookName} was ranked!</p>
@@ -29,7 +29,9 @@ export default () => {
                                 {activity.review && <p>Review: {activity.review}</p>}
                             </li>
                         )
-                    })}
+                    }) : (
+                            <h1>No activities!</h1>
+                        )}
                 </React.Fragment>
             </List>
         </div>

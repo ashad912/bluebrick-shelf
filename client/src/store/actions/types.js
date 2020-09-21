@@ -1,5 +1,6 @@
 export const FETCH_ACTIVITIES = 'fetch_activities'
 export const SIGNUP_SUCCESS = 'singup_success'
-export const SIGNUP_ERROR = 'signup_error'
+export const SIGNIN_SUCCESS = 'singin_success'
+export const AUTH_ERROR = 'auth_error'
 export const AUTH_SUCCESS = 'auth_success'
 export const NO_AUTH = 'no_auth'

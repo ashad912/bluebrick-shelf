@@ -1,9 +1,19 @@
 import axios from 'axios'
 import {
     FETCH_ACTIVITIES,
+    AUTH_ERROR,
+    AUTH_SUCCESS,
     SIGNUP_SUCCESS,
-    SIGNUP_ERROR, NO_AUTH
+    SIGNIN_SUCCESS,
+    NO_AUTH
 } from './types'
+
+import {
+    SIGNUP_FAILED_MSSG,
+    SIGNIN_FAILED_MSSG
+} from 'store/reducers/auth'
+
+axios.defaults.baseURL = '/api/'
 
 export const fetchActivities = () => {
     return async (dispatch) => {
@@ -22,10 +32,25 @@ export const signUp = (body) => {
     return async (dispatch) => {
         try {
             const res = await axios.post('/signup', body)
-            dispatch({ type: SIGNUP_SUCCESS, uid: res.data._id })
+            dispatch({ type: SIGNUP_SUCCESS })
 
         } catch (e) {
-            dispatch({ type: SIGNUP_ERROR })
+            dispatch({ type: AUTH_ERROR, error: SIGNUP_FAILED_MSSG })
+            throw e
+        }
+
+    }
+}
+
+export const signIn = (body) => {
+    return async (dispatch) => {
+        try {
+            const res = await axios.post('/signin', body)
+            dispatch({ type: SIGNIN_SUCCESS, uid: res.data.user._id })
+
+        } catch (e) {
+            dispatch({ type: AUTH_ERROR, error: SIGNIN_FAILED_MSSG })
+            throw e
         }
 
     }
@@ -40,6 +65,7 @@ export const authCheck = () => {
 
         } catch (e) {
             dispatch({ type: NO_AUTH })
+            throw e
         }
     }
 }

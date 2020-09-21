@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 
@@ -7,13 +9,12 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ErrorIcon from '@material-ui/icons/Error';
 
-import "./SignUp.css"
+import "./SignSchema.css"
 
 import FormikField from '../FormikField'
 
-import singUp from 'components/actions'
 
-const SignUpSchema = Yup.object().shape({
+const SignSchemaValidation = Yup.object().shape({
     email: Yup.string()
         .min(2, "Too Short!")
         .required('Required')
@@ -23,28 +24,39 @@ const SignUpSchema = Yup.object().shape({
         .required('Required'),
 })
 
-const SignUp = () => {
+const SignSchema = (props) => {
+
+    const { title, submitAction, callbackAction } = props
+
     const authError = useSelector(state => state.auth.authError)
 
     const dispatch = useDispatch()
 
 
-    const handleSubmit = (values) => {
+    const handleSubmit = async (values) => {
         //alert(JSON.stringify(values))
         console.log(values)
-        dispatch(singUp(values))
+
+        try {
+            await dispatch(submitAction(values))
+            if (callbackAction) {
+                callbackAction()
+            }
+        } catch (e) {
+            console.error(e)
+        }
     }
 
     return (
-        <div className="SignUp">
-            <h1>Sign Up</h1>
+        <div className="SignSchema">
+            <h1>{title}</h1>
             <Formik
                 initialValues={{
                     email: '',
                     password: '',
                 }}
                 onSubmit={handleSubmit}
-                validationSchema={SignUpSchema}
+                validationSchema={SignSchemaValidation}
             >
                 {props => {
                     // <Form> === <form onSubmit={props.handleSubmit}>
@@ -84,4 +96,10 @@ const SignUp = () => {
     )
 }
 
-export default SignUp
+SignSchema.propTypes = {
+    title: PropTypes.string.isRequired,
+    submitAction: PropTypes.func.isRequired,
+    callbackAction: PropTypes.func,
+}
+
+export default SignSchema

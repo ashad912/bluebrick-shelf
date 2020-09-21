@@ -12,12 +12,9 @@ const withAuth = WrappedComponent => {
         return <Redirect to="/signin" />;
       }
 
-      const propsToPass = { ...this.props }
-      delete propsToPass.init
-
       return (
         <React.Fragment>
-          <WrappedComponent {...propsToPass} />
+          <WrappedComponent {...this.props} />
         </React.Fragment>
       );
     }
@@ -26,7 +23,6 @@ const withAuth = WrappedComponent => {
 const mapStateToProps = state => {
   return {
     uid: state.auth.uid,
-    init: state.auth.init,
   };
 };
 

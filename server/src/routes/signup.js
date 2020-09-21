@@ -21,13 +21,11 @@ router.post(
         const user = await userService.signUp(req.body.email, req.body.password)
 
         res
-        .status(201)
-        .send({
-            data: {
-                user
-            },
-            message: 'Account registered'
-        })
+            .status(201)
+            .send({
+                user,
+                message: 'Account registered'
+            })
     }
 )
 

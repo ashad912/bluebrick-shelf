@@ -1,7 +1,7 @@
 import React from 'react'
 import { Field, ErrorMessage } from 'formik'
 import PropTypes from 'prop-types'
-import './FormikField.scss'
+import './FormikField.css'
 
 import TextField from '@material-ui/core/TextField';
 

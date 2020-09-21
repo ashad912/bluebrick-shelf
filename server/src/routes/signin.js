@@ -21,21 +21,19 @@ router.post(
         const { user, token } = await userService.signIn(req.body.email, req.body.password)
 
         res
-        .cookie(
-            "token",
-            token,
-            {
-                maxAge: 2592000000,
-                httpOnly: true
-            }
-        )
-        .status(200)
-        .send({
-            data: {
+            .cookie(
+                "token",
+                token,
+                {
+                    maxAge: 2592000000,
+                    httpOnly: true
+                }
+            )
+            .status(200)
+            .send({
                 user,
-                token
-            },
-            message: 'You are signed in'
+                token,
+                message: 'You are signed in'
             })
     }
 )

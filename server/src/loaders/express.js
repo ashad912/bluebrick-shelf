@@ -4,6 +4,7 @@ import { json } from 'body-parser'
 import cookieParser from 'cookie-parser'
 
 import feedRouter from '@routes/feed'
+import meRouter from '@routes/me'
 import rateRouter from '@routes/rate'
 import signInRouter from '@routes/signin'
 import signOutRouter from '@routes/signout'
@@ -19,6 +20,7 @@ export default (() => {
     app.use(cookieParser())
 
     app.use('/api', feedRouter)
+    app.use('/api', meRouter)
     app.use('/api', rateRouter)
     app.use('/api', signInRouter)
     app.use('/api', signOutRouter)
