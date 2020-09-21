@@ -2,7 +2,7 @@
 FROM node:alpine    
 
 # Changing project workspace
-WORKDIR /usr/app
+WORKDIR /usr/src/app
 
 # First copy package.json, if changed, install deps (still not ideal :<)
 COPY ./package.json ./
@@ -12,6 +12,9 @@ RUN npm install
 
 # Copy project from the 'machine' to container
 COPY ./ ./
+
+# Document which ports are intended to published 
+EXPOSE 4000
 
 # Default command
 CMD ["npm", "start"]
