@@ -1,13 +1,14 @@
 version: '3'
 services:
   react-app:
+    image: bbshelf.azurecr.io/react-app:latest
     build: ./client
     ports:
       - '80:80'
-    stdin_open: true
     depends_on:
       - node-app
   node-app:
+    image: bbshelf.azurecr.io/node-app:latest
     build: ./server
     ports:
       - '4000:4000'
