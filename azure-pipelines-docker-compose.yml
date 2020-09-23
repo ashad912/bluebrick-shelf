@@ -15,7 +15,7 @@ steps:
     inputs:
       containerRegistry: 'bbshelf'
       repository: 'react-app-tests'
-      command: 'build'
+      command: 'buildAndPush'
       Dockerfile: '**/client/Dockerfile.test'
       tags: 'latest'
 
