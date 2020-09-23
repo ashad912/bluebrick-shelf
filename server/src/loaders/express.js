@@ -27,7 +27,7 @@ export default (() => {
     app.use(json())
     app.use(cookieParser())
 
-    if(config.nodeEnv === constants.PRODUCTION){
+    if (config.nodeEnv === constants.PRODUCTION) {
         app.use(express.static(CLIENT_BUILD_PATH))
         app.use(cors());
     }
