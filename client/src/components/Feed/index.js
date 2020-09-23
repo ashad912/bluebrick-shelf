@@ -32,7 +32,7 @@ export default () => {
                             </li>
                         )
                     }) : (
-                            <h1>No activities</h1>
+                            <h1>No activities!</h1>
                         )}
 
                 </List>

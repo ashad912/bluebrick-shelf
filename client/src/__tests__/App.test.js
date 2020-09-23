@@ -31,7 +31,7 @@ beforeEach(async () => {
 it('shows a navbar container', () => {
 
 
-    const component = screen.getByTestId('navba_container');
+    const component = screen.getByTestId('navbar_container');
     expect(component).toBeInTheDocument();
 })
 
