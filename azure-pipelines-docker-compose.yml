@@ -11,19 +11,19 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  - task: Docker@2
-    inputs:
-      containerRegistry: 'bbshelf'
-      repository: 'react-app-tests'
-      command: 'buildAndPush'
-      Dockerfile: '**/client/Dockerfile.test'
-      tags: 'latest'
+  # - task: Docker@2
+  #   inputs:
+  #     containerRegistry: 'bbshelf'
+  #     repository: 'react-app-tests'
+  #     command: 'buildAndPush'
+  #     Dockerfile: '**/client/Dockerfile.test'
+  #     tags: 'latest'
 
   - task: Docker@2
     inputs:
       containerRegistry: 'bbshelf'
       command: 'start'
-      container: 'react-app-tests'
+      container: 'bbshelf.azurecr.io/react-app-tests'
 
   - task: DockerCompose@0
     inputs:
