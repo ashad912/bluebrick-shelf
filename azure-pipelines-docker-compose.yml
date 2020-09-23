@@ -6,6 +6,7 @@
 
 trigger:
   - azure-pipelines-docker-compose
+  - master
 
 pool:
   vmImage: 'ubuntu-latest'
