@@ -17,7 +17,6 @@ export default (state = initState, action) => {
             }
         }
         case SIGNIN_SUCCESS: {
-            console.log(action.uid)
             return {
                 ...state,
                 uid: action.uid,

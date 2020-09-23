@@ -25,7 +25,7 @@ describe('Invoking NotAuthorizedError', () => {
     const err = new errors.NotAuthorizedError()
 
     it("should return 'Not authorized' output and 401 status code", () => {
-        expect(err.serializeErrors()).toEqual([{ message: 'Not authorized' }])
+        expect(err.serializeErrors()).toEqual([{ message: 'Not authorized!' }])
         expect(err.statusCode).toBe(401)
     })
 })

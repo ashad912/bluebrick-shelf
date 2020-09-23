@@ -17,7 +17,7 @@ const Navbar = () => {
         await dispatch(signOut())
     }
 
-    const TypoLink = ({ children, to, onClick }) => {
+    const TypoLink = ({ children, to = '#', onClick }) => {
         return (
             <Link className="TypoLinkContainer" to={to} onClick={onClick}>
 
@@ -38,8 +38,8 @@ const Navbar = () => {
 
     return (
         <AppBar color="secondary" position="static">
-            <Toolbar className="ToolbarRoot" >
-                <Typography className="NavbarTitle" variant="h6">
+            <Toolbar data-testid='navbar_container' className="ToolbarRoot" >
+                <Typography data-testid='app_title' className="NavbarTitle" variant="h6">
                     Bluebrick Shelf
                 </Typography>
                 {isAuth ? (
