@@ -11,6 +11,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+  #   Building to invoke client tests
   - task: DockerCompose@0
     inputs:
       containerregistrytype: 'Azure Container Registry'
@@ -19,17 +20,14 @@ steps:
       dockerComposeFile: '**/docker-compose.yml'
       action: 'Build services'
 
-  #   Before I invoked tests as separate command (before push) - now both client and server tests run while building
-  #   I had to add 'RUN npm run test:ci' line in both Dockerfiles
-  # - task: DockerCompose@0
-  #   inputs:
-  #     containerregistrytype: 'Azure Container Registry'
-  #     azureSubscription: 'Free Trial (7bfac3ac-8201-45dd-aa5b-91b25b6587c9)'
-  #     azureContainerRegistry: '{"loginServer":"bbshelf.azurecr.io", "id" : "/subscriptions/7bfac3ac-8201-45dd-aa5b-91b25b6587c9/resourceGroups/bluebrick-shelf/providers/Microsoft.ContainerRegistry/registries/bbshelf"}'
-  #     dockerComposeFile: '**/docker-compose.yml'
-  #     action: 'Run a Docker Compose command'
-  #     dockerComposeCommand: 'run node-app npm run test:ci'
-  #     arguments: '--build'
+  - task: DockerCompose@0
+    inputs:
+      containerregistrytype: 'Azure Container Registry'
+      azureSubscription: 'Free Trial (7bfac3ac-8201-45dd-aa5b-91b25b6587c9)'
+      azureContainerRegistry: '{"loginServer":"bbshelf.azurecr.io", "id" : "/subscriptions/7bfac3ac-8201-45dd-aa5b-91b25b6587c9/resourceGroups/bluebrick-shelf/providers/Microsoft.ContainerRegistry/registries/bbshelf"}'
+      dockerComposeFile: '**/docker-compose.yml'
+      action: 'Run a Docker Compose command'
+      dockerComposeCommand: 'run node-app npm run test:ci'
 
   - task: DockerCompose@0
     inputs:

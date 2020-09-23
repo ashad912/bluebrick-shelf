@@ -13,9 +13,6 @@ RUN npm install
 # Copy project from the 'machine' to container
 COPY ./ ./
 
-# Run tests
-RUN npm run test:ci
-
 # Document which ports are intended to published 
 EXPOSE 4000
 
