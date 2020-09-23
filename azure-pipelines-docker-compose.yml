@@ -29,6 +29,7 @@ steps:
       dockerComposeFile: '**/docker-compose.yml'
       action: 'Run a Docker Compose command'
       dockerComposeCommand: 'run react-app npm run test:ci'
+      arguments: '--build'
 
   - task: DockerCompose@0
     inputs:
