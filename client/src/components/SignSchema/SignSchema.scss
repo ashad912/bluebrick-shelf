@@ -1,0 +1,23 @@
+.SignSchema {
+	background: white;
+	border-radius: 10px;
+	width: 500px;
+	padding: 50px;
+}
+
+.ErrorPaper {
+	display: flex;
+	margin-top: 1rem;
+	padding: 0.5rem;
+	background-color: #ffe7e7 !important;
+	text-align: left;
+}
+
+.ErrorIcon {
+	margin-right: 0.5rem;
+	color: #ff001f;
+}
+
+.SubmitButton {
+	margin-top: 1rem !important;
+}

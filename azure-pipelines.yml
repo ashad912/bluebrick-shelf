@@ -1,5 +1,6 @@
 trigger:
   - master
+
 variables:
   node_version: 10.x
   code_coverge_threshold: '60'
@@ -25,14 +26,13 @@ steps:
     displayName: 'Install dependencies'
     condition: ne(variables['CacheRestored'], 'true')
 
-
   # Execute unit tests
   - script: set MONGO_URL_TESTS=$MONGO_URL_TESTS&& npm run-script test:ci
     workingDirectory: $(System.DefaultWorkingDirectory)/server
     displayName: 'Execute tests'
     continueOnError: true
     env:
-      MONGO_URL_TESTS: $(SECRET_MONGO_URL_TESTS) 
+      MONGO_URL_TESTS: $(SECRET_MONGO_URL_TESTS)
 
   # Publish unit test results
   - task: PublishTestResults@2

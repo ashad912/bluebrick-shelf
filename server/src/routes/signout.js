@@ -11,14 +11,12 @@ router.post(
         const user = await userService.signOut(req.user, req.token)
 
         res
-        .clearCookie("token")
-        .status(200)
-        .send({
-            data: {
-                user
-            },
-            message: 'You are signed out'
-        })
+            .clearCookie("token")
+            .status(200)
+            .send({
+                user,
+                message: 'You are signed out'
+            })
     }
 )
 

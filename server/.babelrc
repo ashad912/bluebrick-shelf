@@ -23,6 +23,7 @@
 					"@config": "./config",
 					"@loaders": "./src/loaders",
 					"@services": "./src/services",
+					"@utils": "./src/utils",
           "@tests": "./__tests__/",
           "@testUtils": "./__tests__/utils"
 				}

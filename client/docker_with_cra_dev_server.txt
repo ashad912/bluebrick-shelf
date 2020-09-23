@@ -1,0 +1,56 @@
+Links:
+https://dev.to/sujaykundu777/utilizing-the-power-of-docker-while-building-mern-apps-using-mern-docker-4olb
+https://itnext.io/dockerize-a-react-app-with-node-js-backend-connected-to-mongodb-63740fc0f9e7
+
+
+https://github.com/joshdcuneo/mern-docker-starter
+
+
+1. If u use Docker Toolbox - in package json, set proxy to:
+  "proxy": "http://192.168.99.100:4000/",
+2. Dockerfile:
+
+    # Specify a base image with npm preinstalled
+    FROM node:alpine
+
+    # Create app directory
+    WORKDIR /usr/src/app
+
+    # Install app dependencies
+    COPY package*.json ./
+
+    # Install some deps
+    RUN npm install --silent
+
+    # Copy app source code
+    COPY . .
+
+    # Expose port and start application
+    EXPOSE 3000
+    CMD ["npm", "start"]
+
+3. docker-compose.yml:
+
+    version: '3'
+    services:
+        react-app:
+            build: ./client
+            ports:
+            - '3000:3000'
+            stdin_open: true
+            depends_on:
+            - node-app
+        node-app:
+            build: ./server
+            ports:
+            - '4000:4000'
+            depends_on:
+            - mongo
+            environment:
+            - MONGO_URL=mongodb://mongo:27017/bbshelf
+            - MONGO_URL_TESTS=mongodb://mongo:27017/bbshelf-test
+            - COMPOSE=true
+        mongo:
+            image: mongo
+            ports:
+            - '27017:27017'

@@ -1,8 +1,9 @@
 import dotenv from 'dotenv';
+import constants from '@utils/constants'
 
 let options = {}
 
-if (process.env.ATLAS === 'true') {
+if (process.env.ATLAS === constants.TRUE) {
   options = { path: 'cloud.env' }
 }
 
