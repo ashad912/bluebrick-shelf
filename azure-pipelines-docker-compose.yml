@@ -19,6 +19,8 @@ steps:
       dockerComposeFile: '**/docker-compose.yml'
       action: 'Build services'
 
+  #   Before I invoked tests as separate command (before push) - now both client and server tests run while building
+  #   I had to add 'RUN npm run test:ci' line in both Dockerfiles
   # - task: DockerCompose@0
   #   inputs:
   #     containerregistrytype: 'Azure Container Registry'
