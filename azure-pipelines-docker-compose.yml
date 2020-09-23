@@ -18,6 +18,7 @@ steps:
   #     command: 'buildAndPush'
   #     Dockerfile: '**/client/Dockerfile.test'
   #     tags: 'latest'
+  #
 
   - task: Docker@2
     inputs:
