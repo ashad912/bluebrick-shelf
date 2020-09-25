@@ -1,4 +1,4 @@
-version: '3'
+version: '3.2'
 services:
   react-app:
     image: bbshelf.azurecr.io/react-app:latest
@@ -6,7 +6,10 @@ services:
     ports:
       - '80:80'
     depends_on:
+      - mongo
       - node-app
+    volumes:
+      - ./static:/usr/share/nginx/static
   node-app:
     image: bbshelf.azurecr.io/node-app:latest
     build: ./server
@@ -14,6 +17,8 @@ services:
       - '4000:4000'
     depends_on:
       - mongo
+    volumes:
+      - ./static:/usr/src/app/static
     environment:
       - NODE_ENV=production
       - MONGO_URL=mongodb://mongo:27017/bbshelf
@@ -23,3 +28,11 @@ services:
     image: mongo
     ports:
       - '27017:27017'
+    volumes:
+      - type: volume
+        source: dbdata
+        target: /data/db
+
+volumes:
+  static:
+  dbdata:
